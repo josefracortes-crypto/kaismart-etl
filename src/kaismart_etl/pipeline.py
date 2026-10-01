@@ -33,9 +33,9 @@ def run_etl() -> dict[str, pd.DataFrame]:
     logger.info("Reporte limpieza ventas: %s", reporte_ventas)
     logger.info("Reporte limpieza logistica: %s", reporte_logistica)
 
-    df_ventas_transformado.to_excel(settings.silver_dir / "ventas_transformado.xlsx", index=False)
-    df_logistica_transformado.to_excel(
-       settings.silver_dir / "logistica_transformado.xlsx", index=False
+    df_ventas_transformado.to_csv(settings.silver_dir / "ventas_transformado.csv", index=False)
+    df_logistica_transformado.to_csv(
+       settings.silver_dir / "logistica_transformado.csv", index=False
     )
 
     # --- Gold (integracion por pedido_id + datamarts) ---

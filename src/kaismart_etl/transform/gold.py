@@ -89,7 +89,7 @@ def construir_marts(df_gold_pedidos: pd.DataFrame) -> dict[str, pd.DataFrame]:
 
 def guardar_gold(df: pd.DataFrame, nombre: str) -> Path:
     settings.ensure_dirs()
-    destino = Path(settings.gold_dir) / f"{nombre}.xlsx"
-    df.to_excel(destino, index=False)
+    destino = Path(settings.gold_dir) / f"{nombre}.csv"
+    df.to_csv(destino, index=False)
     logger.info("Gold guardado: %s (%s registros)", destino, len(df))
     return destino
