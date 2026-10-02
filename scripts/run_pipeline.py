@@ -1,4 +1,4 @@
-"""Ejecuta el pipeline ETL completo (extraccion -> Bronze -> Silver -> Gold) una vez."""
+"""Ejecuta el pipeline ETL completo."""
 from __future__ import annotations
 
 import sys

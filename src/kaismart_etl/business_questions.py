@@ -1,5 +1,4 @@
-"""Parte 6: 10 preguntas de negocio resueltas con pandas sobre los datos
-originales (df_ventas, df_logistica), sin necesidad de integrarlos."""
+
 from __future__ import annotations
 
 import pandas as pd
@@ -23,7 +22,7 @@ def q3_categoria_mas_vendida_cantidad(df_ventas: pd.DataFrame) -> pd.Series:
 def q4_top10_clientes_valor_neto(df_ventas: pd.DataFrame) -> pd.Series:
     """4. Cuales son los 10 clientes con mayor valor neto acumulado en compras?"""
     return (
-        df_ventas.groupby("cliente_id")["valor_neto"].sum().sort_values(ascending=False).head(10)
+        df_ventas.groupby("id_cliente")["valor_neto"].sum().sort_values(ascending=False).head(10)
     )
 
 

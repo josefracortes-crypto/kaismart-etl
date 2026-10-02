@@ -1,8 +1,4 @@
-"""Catalogos canonicos de categorias del negocio Kaismart.
 
-Se centralizan aqui para que el generador de datos simulados y la capa
-Silver (estandarizacion) usen exactamente los mismos valores y alias.
-"""
 
 CIUDADES = ["Bogotá D.C.", "Cali", "Medellín", "Barranquilla", "Bucaramanga", "Pereira"]
 CIUDADES_ALIAS = {

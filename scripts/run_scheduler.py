@@ -1,5 +1,5 @@
 """Parte 8: inicia el orquestador que automatiza el pipeline con la libreria
-``schedule`` (ejecucion periodica segun SCHEDULE_INTERVAL_MINUTES)."""
+``schedule`` """
 from __future__ import annotations
 
 import sys

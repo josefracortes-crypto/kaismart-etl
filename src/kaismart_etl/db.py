@@ -1,8 +1,5 @@
-"""Conexion con la base de datos MySQL (Fuente 1: sistema comercial).
+"""Conexion con la base de datos MySQL (Fuente 1: sistema comercial)."""
 
-Implementa la Parte 1 del ejercicio: importar librerias, crear la conexion,
-consultar la tabla ``ventas`` y cerrar correctamente la conexion.
-"""
 from __future__ import annotations
 
 from sqlalchemy import Engine, create_engine, text
