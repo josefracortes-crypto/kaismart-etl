@@ -1,5 +1,4 @@
-"""Capa Bronze: persiste los datos EXACTAMENTE como llegaron de la fuente,
-solo agregando metadatos de trazabilidad de la ingesta. No se limpia nada aqui."""
+
 from __future__ import annotations
 
 from datetime import datetime, timezone
@@ -14,11 +13,8 @@ logger = get_logger(__name__)
 
 
 def guardar_bronze(df: pd.DataFrame, nombre: str, fuente: str) -> Path:
-    """Guarda una copia inmutable del DataFrame crudo en la capa Bronze.
 
-    Agrega columnas de trazabilidad (_fuente, _fecha_ingesta) sin modificar
-    ninguna columna original.
-    """
+
     settings.ensure_dirs()
     df_bronze = df.copy()
     df_bronze["_fuente"] = fuente

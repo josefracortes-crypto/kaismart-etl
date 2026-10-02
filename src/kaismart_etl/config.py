@@ -1,4 +1,4 @@
-"""Configuracion centralizada del proyecto (variables de entorno via .env)."""
+
 from __future__ import annotations
 
 import os

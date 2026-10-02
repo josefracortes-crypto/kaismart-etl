@@ -1,9 +1,4 @@
-"""Comprension inicial de los datasets (Parte 3) y perfil de calidad (Parte 4).
 
-Todas las funciones son de solo-lectura: NO eliminan ni imputan nada, solo
-describen, cuantifican y retornan DataFrames de diagnostico para que el
-analista interprete los resultados en el notebook de EDA.
-"""
 from __future__ import annotations
 
 import pandas as pd
@@ -29,12 +24,7 @@ def resumen_estructura(df: pd.DataFrame, nombre: str) -> pd.DataFrame:
 
 
 def sugerir_tipos_variables(df: pd.DataFrame) -> dict[str, list[str]]:
-    """Clasifica heuristicamente las columnas en identificadores, categoricas,
-    numericas y de fecha/tiempo, para orientar el analisis (Parte 3 punto 6-9).
 
-    La heuristica es un punto de partida: el analista debe validar el
-    resultado manualmente en el notebook.
-    """
     identificadores, categoricas, numericas, fechas = [], [], [], []
 
     for col in df.columns:

@@ -1,11 +1,4 @@
-"""Capa Silver: limpieza, estandarizacion y validacion de cada fuente por
-separado (aun sin integrar). Genera ``df_ventas_transformado`` y
-``df_logistica_transformado``.
 
-Cada decision de imputacion/transformacion esta comentada explicando el
-motivo, tal como lo exige la Parte 7 del ejercicio: "no se realizan
-imputaciones de forma automatica, cada decision debe explicarse".
-"""
 from __future__ import annotations
 
 import numpy as np
@@ -16,7 +9,7 @@ from ..normalize import estandarizar_categoria
 
 
 def limpiar_ventas(df_bronze: pd.DataFrame) -> tuple[pd.DataFrame, dict]:
-    """Limpia df_ventas (bronze) y retorna (df_ventas_transformado, reporte)."""
+
     df = df_bronze.drop(columns=["_fuente", "_fecha_ingesta"], errors="ignore").copy()
     reporte: dict = {"filas_entrada": len(df)}
 

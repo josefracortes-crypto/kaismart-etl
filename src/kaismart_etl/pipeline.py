@@ -1,7 +1,4 @@
-"""Orquestador del pipeline ETL completo siguiendo la metodologia Medallion.
 
-extract (Fuente 1 MySQL + Fuente 2 Excel) -> bronze -> silver -> gold
-"""
 from __future__ import annotations
 
 import pandas as pd
@@ -15,7 +12,7 @@ logger = get_logger(__name__)
 
 
 def run_etl() -> dict[str, pd.DataFrame]:
-    """Ejecuta el pipeline completo una vez y retorna los DataFrames clave."""
+
     settings.ensure_dirs()
     logger.info("=== INICIO pipeline ETL Kaismart ===")
 

@@ -11,7 +11,7 @@ def get_logger(name: str) -> logging.Logger:
     settings.ensure_dirs()
     logger = logging.getLogger(name)
     if logger.handlers:
-        return logger  # evita duplicar handlers si ya fue configurado
+        return logger
 
     logger.setLevel(logging.INFO)
     fmt = logging.Formatter(

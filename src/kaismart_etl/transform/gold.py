@@ -1,5 +1,4 @@
-"""Capa Gold: integra df_ventas_transformado y df_logistica_transformado por
-``pedido_id`` y construye datamarts listos para analisis de negocio."""
+
 from __future__ import annotations
 
 from pathlib import Path
@@ -13,7 +12,7 @@ logger = get_logger(__name__)
 
 
 def _resumen_logistico_por_pedido(df_logistica: pd.DataFrame) -> pd.DataFrame:
-    """Colapsa los N eventos logisticos de cada pedido en 1 fila resumen."""
+
     df = df_logistica.sort_values("fecha_evento")
     agg = df.groupby("pedido_id").agg(
         cantidad_eventos=("evento_id", "count"),
@@ -35,7 +34,7 @@ def _resumen_logistico_por_pedido(df_logistica: pd.DataFrame) -> pd.DataFrame:
 def construir_gold_pedidos(
     df_ventas: pd.DataFrame, df_logistica: pd.DataFrame
 ) -> tuple[pd.DataFrame, dict]:
-    """Integra ventas + logistica a nivel de pedido_id (Parte 7: capa Gold)."""
+
     resumen_logistico = _resumen_logistico_por_pedido(df_logistica)
 
     df_gold = df_ventas.merge(resumen_logistico, on="pedido_id", how="left", indicator=True)
@@ -56,7 +55,7 @@ def construir_gold_pedidos(
 
 
 def construir_marts(df_gold_pedidos: pd.DataFrame) -> dict[str, pd.DataFrame]:
-    """Datamarts agregados de negocio a partir del gold integrado."""
+
     marts: dict[str, pd.DataFrame] = {}
 
     marts["ventas_por_ciudad_categoria"] = (

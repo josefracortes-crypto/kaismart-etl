@@ -1,4 +1,3 @@
-"""Conexion con la base de datos MySQL (Fuente 1: sistema comercial)."""
 
 from __future__ import annotations
 
